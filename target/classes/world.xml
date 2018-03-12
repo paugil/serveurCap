@@ -1,7 +1,7 @@
 	<world xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 xsi:noNamespaceSchemaLocation="worldSchema.xsd">
-	<name>CapiVin</name>
-	<logo>CapiVin.png</logo>
+	<name>CapiFrance</name>
+	<logo>icones/CapiFrance.png</logo>
 	<money>1</money>
 	<score>0</score>
 	<totalangels>0</totalangels>
@@ -11,8 +11,8 @@ xsi:noNamespaceSchemaLocation="worldSchema.xsd">
 	<products>
 		<product>
 			<id>1</id>
-			<name>Le beaujolais nouveau</name>
-			<logo>Beaujolais_nouveau.jpg</logo>
+			<name>Les viennoiseries</name>
+			<logo>icones/viennoiseries/viennoiserie.jpg</logo>
 			<cout>4</cout>
 			<croissance>1.07</croissance>
 			<revenu>1</revenu>
@@ -22,20 +22,38 @@ xsi:noNamespaceSchemaLocation="worldSchema.xsd">
 			<managerUnlocked>false</managerUnlocked>
 			<palliers>
 				<pallier>
-					<name>bouteille</name>
-					<logo>Bouteille.jpg</logo>
-					<seuil>50</seuil>
+					<name>Croissant</name>
+					<logo>icones/viennoiseries/croissant.jpg</logo>
+					<seuil>10</seuil>
 					<idcible>1</idcible>
-					<ratio>6</ratio>
+					<ratio>5</ratio>
 					<typeratio>vitesse</typeratio>
 					<unlocked>false</unlocked>
 				</pallier>
 				<pallier>
-					<name>tonneau</name>
-					<logo>Tonneau.jpg</logo>
-					<seuil>10000</seuil>
+					<name>Pain au chocolat</name>
+					<logo>icones/viennoiseries/painchoc.jpg</logo>
+					<seuil>30</seuil>
 					<idcible>1</idcible>
-					<ratio>8</ratio>
+					<ratio>5</ratio>
+					<typeratio>gain</typeratio>
+					<unlocked>false</unlocked>
+				</pallier>
+				<pallier>
+					<name>Chouquette</name>
+					<logo>icones/viennoiseries/chouquette.jpg</logo>
+					<seuil>100</seuil>
+					<idcible>1</idcible>
+					<ratio>10</ratio>
+					<typeratio>vitesse</typeratio>
+					<unlocked>false</unlocked>
+				</pallier>
+				<pallier>
+					<name>Brioche</name>
+					<logo>icones/viennoiseries/brioche.jpg</logo>
+					<seuil>300</seuil>
+					<idcible>1</idcible>
+					<ratio>10</ratio>
 					<typeratio>gain</typeratio>
 					<unlocked>false</unlocked>
 				</pallier>
@@ -44,8 +62,8 @@ xsi:noNamespaceSchemaLocation="worldSchema.xsd">
 		
 		<product>
 			<id>2</id>
-			<name>Les trois clochers</name>
-			<logo>Les_3_clochers.jpg</logo>
+			<name>Les pains</name>
+			<logo>icones/pains/pains.jpg</logo>
 			<cout>60</cout>
 			<croissance>1.15</croissance>
 			<revenu>60</revenu>
@@ -55,8 +73,8 @@ xsi:noNamespaceSchemaLocation="worldSchema.xsd">
 			<managerUnlocked>false</managerUnlocked>
 			<palliers>
 				<pallier>
-					<name>bouteille</name>
-					<logo>Bouteille.jpg</logo>
+					<name>Pain de mie</name>
+					<logo>icones/pains/paindemie.jpg</logo>
 					<seuil>40</seuil>
 					<idcible>2</idcible>
 					<ratio>2</ratio>
@@ -64,23 +82,245 @@ xsi:noNamespaceSchemaLocation="worldSchema.xsd">
 					<unlocked>false</unlocked>
 				</pallier>
 				<pallier>
-					<name>tonneau</name>
-					<logo>Tonneau.jpg</logo>
+					<name>Baguette</name>
+					<logo>icones/pains/baguette.jpg</logo>
 					<seuil>70</seuil>
 					<idcible>2</idcible>
-					<ratio>7</ratio>
+					<ratio>3</ratio>
+					<typeratio>gain</typeratio>
+					<unlocked>false</unlocked>
+				</pallier>
+				<pallier>
+					<name>Pain au sésame</name>
+					<logo>icones/pains/painsesame.jpg</logo>
+					<seuil>110</seuil>
+					<idcible>2</idcible>
+					<ratio>5</ratio>
+					<typeratio>vitesse</typeratio>
+					<unlocked>false</unlocked>
+				</pallier>
+				<pallier>
+					<name>Pain bio</name>
+					<logo>icones/pains/painbio.jpg</logo>
+					<seuil>160</seuil>
+					<idcible>2</idcible>
+					<ratio>10</ratio>
 					<typeratio>gain</typeratio>
 					<unlocked>false</unlocked>
 				</pallier>
 			</palliers>
 		</product>
-	
+
+		<product>
+			<id>3</id>
+			<name>Les saucissons</name>
+			<logo>icones/saucissons/saucissons.jpg</logo>
+			<cout>720</cout>
+			<croissance>1.14</croissance>
+			<revenu>540</revenu>
+			<vitesse>6</vitesse>
+			<quantite>0</quantite>
+			<timeleft>6</timeleft>
+			<managerUnlocked>false</managerUnlocked>
+			<palliers>
+				<pallier>
+					<name>Le basique</name>
+					<logo>icones/saucissons/saucissonbasique.jpg</logo>
+					<seuil>50</seuil>
+					<idcible>3</idcible>
+					<ratio>2</ratio>
+					<typeratio>vitesse</typeratio>
+					<unlocked>false</unlocked>
+				</pallier>
+				<pallier>
+					<name>Aux noisettes</name>
+					<logo>icones/saucissons/saucissonnoisettes.jpg</logo>
+					<seuil>100</seuil>
+					<idcible>3</idcible>
+					<ratio>3</ratio>
+					<typeratio>gain</typeratio>
+					<unlocked>false</unlocked>
+				</pallier>
+				<pallier>
+					<name>Special raclette</name>
+					<logo>icones/saucissons/saucissonraclette.jpg</logo>
+					<seuil>150</seuil>
+					<idcible>3</idcible>
+					<ratio>5</ratio>
+					<typeratio>vitesse</typeratio>
+					<unlocked>false</unlocked>
+				</pallier>
+				<pallier>
+					<name>Special reblochon</name>
+					<logo>icones/saucissons/saucissonreblochon.jpg</logo>
+					<seuil>200</seuil>
+					<idcible>3</idcible>
+					<ratio>10</ratio>
+					<typeratio>gain</typeratio>
+					<unlocked>false</unlocked>
+				</pallier>
+			</palliers>
+		</product>
+
+		<product>
+			<id>4</id>
+			<name>Les plats</name>
+			<logo>icones/plats/plats.jpg</logo>
+			<cout>8640</cout>
+			<croissance>1.13</croissance>
+			<revenu>4320</revenu>
+			<vitesse>12</vitesse>
+			<quantite>0</quantite>
+			<timeleft>12</timeleft>
+			<managerUnlocked>false</managerUnlocked>
+			<palliers>
+				<pallier>
+					<name>La quiche lorraine</name>
+					<logo>icones/plats/quichelorraine.jpg</logo>
+					<seuil>50</seuil>
+					<idcible>4</idcible>
+					<ratio>2</ratio>
+					<typeratio>vitesse</typeratio>
+					<unlocked>false</unlocked>
+				</pallier>
+				<pallier>
+					<name>Blanquette de veau</name>
+					<logo>icones/plats/blanquette.jpg</logo>
+					<seuil>100</seuil>
+					<idcible>4</idcible>
+					<ratio>3</ratio>
+					<typeratio>gain</typeratio>
+					<unlocked>false</unlocked>
+				</pallier>
+				<pallier>
+					<name>Tournedos rossini</name>
+					<logo>icones/plats/tournedo.jpg</logo>
+					<seuil>150</seuil>
+					<idcible>4</idcible>
+					<ratio>5</ratio>
+					<typeratio>vitesse</typeratio>
+					<unlocked>false</unlocked>
+				</pallier>
+				<pallier>
+					<name>La fondue savoyarde</name>
+					<logo>icones/plats/fonduesavoyarde.jpg</logo>
+					<seuil>200</seuil>
+					<idcible>4</idcible>
+					<ratio>10</ratio>
+					<typeratio>gain</typeratio>
+					<unlocked>false</unlocked>
+				</pallier>
+			</palliers>
+		</product>
+
+		<product>
+			<id>5</id>
+			<name>Les fromages</name>
+			<logo>icones/fromages/fromages.jpg</logo>
+			<cout>103680</cout>
+			<croissance>1.12</croissance>
+			<revenu>51840</revenu>
+			<vitesse>24</vitesse>
+			<quantite>0</quantite>
+			<timeleft>24</timeleft>
+			<managerUnlocked>false</managerUnlocked>
+			<palliers>
+				<pallier>
+					<name>Le brie AOP</name>
+					<logo>icones/fromages/brie.jpg</logo>
+					<seuil>70</seuil>
+					<idcible>5</idcible>
+					<ratio>2</ratio>
+					<typeratio>vitesse</typeratio>
+					<unlocked>false</unlocked>
+				</pallier>
+				<pallier>
+					<name>Le comte AOP 5 ans</name>
+					<logo>icones/fromages/comte.jpg</logo>
+					<seuil>120</seuil>
+					<idcible>5</idcible>
+					<ratio>3</ratio>
+					<typeratio>gain</typeratio>
+					<unlocked>false</unlocked>
+				</pallier>
+				<pallier>
+					<name>La raclette truffe</name>
+					<logo>icones/fromages/raclettetruffe.jpg</logo>
+					<seuil>160</seuil>
+					<idcible>5</idcible>
+					<ratio>5</ratio>
+					<typeratio>vitesse</typeratio>
+					<unlocked>false</unlocked>
+				</pallier>
+				<pallier>
+					<name>Le reblochon affine</name>
+					<logo>icones/fromages/reblochon.jpg</logo>
+					<seuil>250</seuil>
+					<idcible>5</idcible>
+					<ratio>10</ratio>
+					<typeratio>gain</typeratio>
+					<unlocked>false</unlocked>
+				</pallier>
+			</palliers>
+		</product>
+
+		<product>
+			<id>6</id>
+			<name>Les vins</name>
+			<logo>icones/vins/vins.jpg</logo>
+			<cout>1244160</cout>
+			<croissance>1.11</croissance>
+			<revenu>622080</revenu>
+			<vitesse>96</vitesse>
+			<quantite>0</quantite>
+			<timeleft>96</timeleft>
+			<managerUnlocked>false</managerUnlocked>
+			<palliers>
+				<pallier>
+					<name>Le beaujolais nouveau</name>
+					<logo>icones/vins/beaujolais.jpg</logo>
+					<seuil>80</seuil>
+					<idcible>6</idcible>
+					<ratio>2</ratio>
+					<typeratio>vitesse</typeratio>
+					<unlocked>false</unlocked>
+				</pallier>
+				<pallier>
+					<name>Les trois clochers</name>
+					<logo>icones/vins/troisclochers.jpg</logo>
+					<seuil>120</seuil>
+					<idcible>6</idcible>
+					<ratio>3</ratio>
+					<typeratio>gain</typeratio>
+					<unlocked>false</unlocked>
+				</pallier>
+				<pallier>
+					<name>Le saint Emilion</name>
+					<logo>icones/vins/saintemilion.jpg</logo>
+					<seuil>160</seuil>
+					<idcible>6</idcible>
+					<ratio>5</ratio>
+					<typeratio>vitesse</typeratio>
+					<unlocked>false</unlocked>
+				</pallier>
+				<pallier>
+					<name>Le crozes hermitage</name>
+					<logo>icones/vins/crozeshermitage.png</logo>
+					<seuil>300</seuil>
+					<idcible>6</idcible>
+					<ratio>10</ratio>
+					<typeratio>gain</typeratio>
+					<unlocked>false</unlocked>
+				</pallier>
+			</palliers>
+		</product>
 	</products>
+
 	<allunlocks>
 	
 				<pallier>
-					<name>verre</name>
-					<logo>Verre.jpg</logo>
+					<name>Petit dejeuner</name>
+					<logo>icones/pallier.jpg</logo>
 					<seuil>100</seuil>
 					<idcible>0</idcible>
 					<ratio>2</ratio>
@@ -88,20 +328,48 @@ xsi:noNamespaceSchemaLocation="worldSchema.xsd">
 					<unlocked>false</unlocked>
 				</pallier>
 				<pallier>
-					<name>pichet</name>
-					<logo>Pichet.jpg</logo>
+					<name>Dejeuner</name>
+					<logo>icones/pallier.jpg</logo>
 					<seuil>1000</seuil>
 					<idcible>0</idcible>
 					<ratio>5</ratio>
 					<typeratio>gain</typeratio>
 					<unlocked>false</unlocked>
 				</pallier>
+				<pallier>
+					<name>Gouter</name>
+					<logo>icones/pallier.jpg</logo>
+					<seuil>1500</seuil>
+					<idcible>0</idcible>
+					<ratio>5</ratio>
+					<typeratio>gain</typeratio>
+					<unlocked>false</unlocked>
+				</pallier>
+				<pallier>
+					<name>Aperitiver</name>
+					<logo>icones/pallier.jpg</logo>
+					<seuil>2000</seuil>
+					<idcible>0</idcible>
+					<ratio>7</ratio>
+					<typeratio>gain</typeratio>
+					<unlocked>false</unlocked>
+				</pallier>
+				<pallier>
+					<name>Diner</name>
+					<logo>icones/pallier.jpg</logo>
+					<seuil>3000</seuil>
+					<idcible>0</idcible>
+					<ratio>10</ratio>
+					<typeratio>gain</typeratio>
+					<unlocked>false</unlocked>
+				</pallier>
 
 	</allunlocks>
+
 	<upgrades>
 				<pallier>
-					<name>soiree de partiels</name>
-					<logo>Soiree.jpg</logo>
+					<name>Concour de petanque</name>
+					<logo>icones/upgrades/petanque.jpg</logo>
 					<seuil>15000</seuil>
 					<idcible>1</idcible>
 					<ratio>50</ratio>
@@ -109,81 +377,81 @@ xsi:noNamespaceSchemaLocation="worldSchema.xsd">
 					<unlocked>false</unlocked>
 				</pallier>
 				<pallier>
-					<name>soiree a Gaillac</name>
-					<logo>Soiree.jpg</logo>
-					<seuil>20000</seuil>
+					<name>Soiree a Gaillac</name>
+					<logo>icones/upgrades/soiree.jpg</logo>
+					<seuil>30000</seuil>
 					<idcible>1</idcible>
 					<ratio>50</ratio>
 					<typeratio>gain</typeratio>
 					<unlocked>false</unlocked>
 				</pallier>
 				<pallier>
-					<name>Soiree fin annee</name>
-					<logo>Soiree.jpg</logo>
-					<seuil>50000</seuil>
+					<name>Le french Cancan</name>
+					<logo>icones/upgrades/frenchcancan.jpg</logo>
+					<seuil>40000</seuil>
 					<idcible>0</idcible>
 					<ratio>50</ratio>
 					<typeratio>gain</typeratio>
 					<unlocked>false</unlocked>
 				</pallier>
 				<pallier>
-					<name>soiree integration</name>
-					<logo>Soiree.jpg</logo>
-					<seuil>15000</seuil>
-					<idcible>1</idcible>
-					<ratio>50</ratio>
-					<typeratio>gain</typeratio>
-					<unlocked>false</unlocked>
-				</pallier>
-				<pallier>
-					<name>soiree desintegration</name>
-					<logo>Soiree.jpg</logo>
-					<seuil>20000</seuil>
-					<idcible>1</idcible>
-					<ratio>50</ratio>
-					<typeratio>gain</typeratio>
-					<unlocked>false</unlocked>
-				</pallier>
-				<pallier>
-					<name>Soiree halloween</name>
-					<logo>Soiree.jpg</logo>
+					<name>"Allons au ski"</name>
+					<logo>icones/upgrades/ski.jpg</logo>
 					<seuil>50000</seuil>
+					<idcible>1</idcible>
+					<ratio>50</ratio>
+					<typeratio>gain</typeratio>
+					<unlocked>false</unlocked>
+				</pallier>
+				<pallier>
+					<name>"Juste un verre"</name>
+					<logo>icones/upgrades/unverre.jpg</logo>
+					<seuil>70000</seuil>
+					<idcible>1</idcible>
+					<ratio>50</ratio>
+					<typeratio>gain</typeratio>
+					<unlocked>false</unlocked>
+				</pallier>
+				<pallier>
+					<name>Sortie a bicyclette</name>
+					<logo>icones/upgrades/bicyclette.jpg</logo>
+					<seuil>90000</seuil>
 					<idcible>0</idcible>
 					<ratio>50</ratio>
 					<typeratio>gain</typeratio>
 					<unlocked>false</unlocked>
 				</pallier>
 				<pallier>
-					<name>soiree gala</name>
-					<logo>Soiree.jpg</logo>
-					<seuil>15000</seuil>
+					<name>Soiree de Gala</name>
+					<logo>icones/upgrades/soiree.jpg</logo>
+					<seuil>100000</seuil>
 					<idcible>1</idcible>
 					<ratio>50</ratio>
 					<typeratio>gain</typeratio>
 					<unlocked>false</unlocked>
 				</pallier>
 				<pallier>
-					<name>remise des diplomes</name>
-					<logo>Soiree.jpg</logo>
-					<seuil>20000</seuil>
+					<name>Balance ton fromage</name>
+					<logo>icones/upgrades/balancetonfromage.jpg</logo>
+					<seuil>150000</seuil>
 					<idcible>1</idcible>
 					<ratio>50</ratio>
 					<typeratio>gain</typeratio>
 					<unlocked>false</unlocked>
 				</pallier>
 				<pallier>
-					<name>Soiree carnaval</name>
-					<logo>Soiree.jpg</logo>
-					<seuil>50000</seuil>
+					<name>Adopte un francais</name>
+					<logo>icones/upgrades/adopteunfrancais.jpg</logo>
+					<seuil>190000</seuil>
 					<idcible>0</idcible>
 					<ratio>50</ratio>
 					<typeratio>gain</typeratio>
 					<unlocked>false</unlocked>
 				</pallier>
 				<pallier>
-					<name>soiree fondue</name>
-					<logo>Soiree.jpg</logo>
-					<seuil>15000</seuil>
+					<name>Soiree fondue</name>
+					<logo>icones/upgrades/soireefondue.jpg</logo>
+					<seuil>250000</seuil>
 					<idcible>1</idcible>
 					<ratio>50</ratio>
 					<typeratio>gain</typeratio>
@@ -193,10 +461,9 @@ xsi:noNamespaceSchemaLocation="worldSchema.xsd">
 	
 	</upgrades>
 	<angelupgrades>
-
 				<pallier>
 					<name>Antoine</name>
-					<logo>Antoine.jpg</logo>
+					<logo>icones/angels/antoine.jpg</logo>
 					<seuil>5000</seuil>
 					<idcible>0</idcible>
 					<ratio>50</ratio>
@@ -205,27 +472,27 @@ xsi:noNamespaceSchemaLocation="worldSchema.xsd">
 				</pallier>
 				<pallier>
 					<name>Clement</name>
-					<logo>Clement.jpg</logo>
+					<logo>icones/angels/clement.jpg</logo>
 					<seuil>10000</seuil>
 					<idcible>0</idcible>
-					<ratio>50</ratio>
+					<ratio>100</ratio>
 					<typeratio>gain</typeratio>
 					<unlocked>false</unlocked>
 				</pallier>
 				<pallier>
 					<name>Hamza</name>
-					<logo>Hamza.jpg</logo>
+					<logo>icones/angels/hamza.jpg</logo>
 					<seuil>15000</seuil>
 					<idcible>0</idcible>
-					<ratio>50</ratio>
+					<ratio>200</ratio>
 					<typeratio>gain</typeratio>
 					<unlocked>false</unlocked>
 				</pallier>
 	</angelupgrades>
 	<managers>
-				<pallier>
-					<name>Camille</name>
-					<logo>Camille.jpg</logo>
+			<pallier>
+					<name>Anais</name>
+					<logo>icones/manager/anais.jpg</logo>
 					<seuil>1000</seuil>
 					<idcible>1</idcible>
 					<ratio>50</ratio>
@@ -233,10 +500,46 @@ xsi:noNamespaceSchemaLocation="worldSchema.xsd">
 					<unlocked>false</unlocked>
 				</pallier>
 				<pallier>
-					<name>Charlotte</name>
-					<logo>Charlotte.jpg</logo>
+					<name>Margaux</name>
+					<logo>icones/manager/margaux.jpg</logo>
 					<seuil>15000</seuil>
 					<idcible>2</idcible>
+					<ratio>50</ratio>
+					<typeratio>gain</typeratio>
+					<unlocked>false</unlocked>
+				</pallier>
+				<pallier>
+					<name>Emilie</name>
+					<logo>icones/manager/emilie.jpg</logo>
+					<seuil>30000</seuil>
+					<idcible>3</idcible>
+					<ratio>50</ratio>
+					<typeratio>gain</typeratio>
+					<unlocked>false</unlocked>
+				</pallier>
+				<pallier>
+					<name>Charlotte</name>
+					<logo>icones/manager/charlotte.jpg</logo>
+					<seuil>50000</seuil>
+					<idcible>4</idcible>
+					<ratio>50</ratio>
+					<typeratio>gain</typeratio>
+					<unlocked>false</unlocked>
+				</pallier>
+				<pallier>
+					<name>Pauline</name>
+					<logo>icones/manager/pauline.jpg</logo>
+					<seuil>100000</seuil>
+					<idcible>5</idcible>
+					<ratio>50</ratio>
+					<typeratio>gain</typeratio>
+					<unlocked>false</unlocked>
+				</pallier>
+				<pallier>
+					<name>Camille</name>
+					<logo>icones/manager/camille.jpg</logo>
+					<seuil>200000</seuil>
+					<idcible>6</idcible>
 					<ratio>50</ratio>
 					<typeratio>gain</typeratio>
 					<unlocked>false</unlocked>

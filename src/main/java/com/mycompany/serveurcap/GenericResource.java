@@ -49,7 +49,7 @@ public class GenericResource {
     }
     
     @GET
-    @Path("worldJSON")
+    @Path("world")
     @Produces(MediaType.APPLICATION_JSON)
     public String getWorldJSON() {
         World world = services.readWorldFromXml(); 
