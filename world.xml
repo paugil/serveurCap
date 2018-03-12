@@ -11,7 +11,7 @@ xsi:noNamespaceSchemaLocation="worldSchema.xsd">
 	<products>
 		<product>
 			<id>1</id>
-			<name>Les vienoiseries</name>
+			<name>Les viennoiseries</name>
 			<logo></logo>
 			<cout>4</cout>
 			<croissance>1.07</croissance>
