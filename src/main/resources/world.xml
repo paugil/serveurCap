@@ -2,7 +2,7 @@
 xsi:noNamespaceSchemaLocation="worldSchema.xsd">
 	<name>CapiFrance</name>
 	<logo>icones/CapiFrance.png</logo>
-	<money>1</money>
+	<money>20000000</money>
 	<score>0</score>
 	<totalangels>0</totalangels>
 	<activeangels>0</activeangels>
@@ -12,12 +12,12 @@ xsi:noNamespaceSchemaLocation="worldSchema.xsd">
 		<product>
 			<id>1</id>
 			<name>Les viennoiseries</name>
-			<logo>icones/viennoiseries/viennoiserie.jpg</logo>
+			<logo>icones/viennoiserie.jpg</logo>
 			<cout>4</cout>
 			<croissance>1.07</croissance>
 			<revenu>1</revenu>
-			<vitesse>1</vitesse>
-			<quantite>0</quantite>
+			<vitesse>6000</vitesse>
+			<quantite>1</quantite>
 			<timeleft>0</timeleft>
 			<managerUnlocked>false</managerUnlocked>
 			<palliers>
@@ -67,9 +67,9 @@ xsi:noNamespaceSchemaLocation="worldSchema.xsd">
 			<cout>60</cout>
 			<croissance>1.15</croissance>
 			<revenu>60</revenu>
-			<vitesse>3</vitesse>
+			<vitesse>12000</vitesse>
 			<quantite>0</quantite>
-			<timeleft>3</timeleft>
+			<timeleft>0</timeleft>
 			<managerUnlocked>false</managerUnlocked>
 			<palliers>
 				<pallier>
@@ -118,9 +118,9 @@ xsi:noNamespaceSchemaLocation="worldSchema.xsd">
 			<cout>720</cout>
 			<croissance>1.14</croissance>
 			<revenu>540</revenu>
-			<vitesse>6</vitesse>
+			<vitesse>600000</vitesse>
 			<quantite>0</quantite>
-			<timeleft>6</timeleft>
+			<timeleft>0</timeleft>
 			<managerUnlocked>false</managerUnlocked>
 			<palliers>
 				<pallier>
@@ -168,10 +168,10 @@ xsi:noNamespaceSchemaLocation="worldSchema.xsd">
 			<logo>icones/plats/plats.jpg</logo>
 			<cout>8640</cout>
 			<croissance>1.13</croissance>
-			<revenu>4320</revenu>
-			<vitesse>12</vitesse>
+			<revenu>48</revenu>
+			<vitesse>1200000000000000000</vitesse>
 			<quantite>0</quantite>
-			<timeleft>12</timeleft>
+			<timeleft>0</timeleft>
 			<managerUnlocked>false</managerUnlocked>
 			<palliers>
 				<pallier>
@@ -219,10 +219,10 @@ xsi:noNamespaceSchemaLocation="worldSchema.xsd">
 			<logo>icones/fromages/fromages.jpg</logo>
 			<cout>103680</cout>
 			<croissance>1.12</croissance>
-			<revenu>51840</revenu>
-			<vitesse>24</vitesse>
+			<revenu>518</revenu>
+			<vitesse>240000</vitesse>
 			<quantite>0</quantite>
-			<timeleft>24</timeleft>
+			<timeleft>0</timeleft>
 			<managerUnlocked>false</managerUnlocked>
 			<palliers>
 				<pallier>
@@ -271,9 +271,9 @@ xsi:noNamespaceSchemaLocation="worldSchema.xsd">
 			<cout>1244160</cout>
 			<croissance>1.11</croissance>
 			<revenu>622080</revenu>
-			<vitesse>96</vitesse>
+			<vitesse>96000000</vitesse>
 			<quantite>0</quantite>
-			<timeleft>96</timeleft>
+			<timeleft>0</timeleft>
 			<managerUnlocked>false</managerUnlocked>
 			<palliers>
 				<pallier>
