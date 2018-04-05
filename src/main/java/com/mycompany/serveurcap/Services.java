@@ -8,6 +8,7 @@ package com.mycompany.serveurcap;
 import generated.PallierType;
 import generated.ProductType;
 import generated.ProductsType;
+import generated.TyperatioType;
 import generated.World;
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -32,6 +33,7 @@ public class Services {
     private Unmarshaller u;
     
     public World readWorldFromXml(String username) throws JAXBException {
+        System.out.println("user" + username);
         try {
             cont = JAXBContext.newInstance(World.class);
             u = cont.createUnmarshaller();
@@ -39,21 +41,24 @@ public class Services {
             System.err.println(e.getMessage());
             this.world = null;
         }
+        
         try {
             world = (World) u.unmarshal(new File(username + "-world.xml"));
+            System.out.println("pas de fichier");
         } catch (UnmarshalException e) {
             InputStream input = getClass().getClassLoader().getResourceAsStream("world.xml");
             world = (World) u.unmarshal(input);
+            System.out.println(username);
         }
+        
         return world;
     }
    
     public void saveWorldToXml(World world, String pseudo) throws JAXBException, FileNotFoundException{
         world.setLastupdate(System.currentTimeMillis());
         calScore(world);
-        OutputStream output = new FileOutputStream("world.xml");
         Marshaller m = cont.createMarshaller();
-        m.marshal(output, new File(pseudo + "-world.xml"));        
+        m.marshal(world, new File(pseudo + "-world.xml"));        
     }
     
     private World getWorld(String username) throws JAXBException, FileNotFoundException {
@@ -106,7 +111,7 @@ public class Services {
         return upgrade;     
     }
     
-    public Boolean updateProduct(String username, ProductType newproduct) throws JAXBException, FileNotFoundException {
+    public Boolean updateProduct(String username, ProductType newproduct) throws JAXBException, FileNotFoundException, InterruptedException {
         world = getWorld(username);
         ProductType product = findProductById(world, newproduct.getId());
         if (product == null) { 
@@ -119,7 +124,8 @@ public class Services {
                 product.setQuantite(newproduct.getQuantite()+qtchange);
                 product.setCout(newproduct.getCout());
             } else {
-                //produit en production
+                Thread.sleep(product.getVitesse()+100);
+                world.setMoney(world.getMoney()+product.getRevenu()*product.getQuantite());
             }
             List<PallierType> listUnlocksAllProducts = world.getAllunlocks().getPallier();
             List<ProductType> listProducts = world.getProducts().getProduct();
@@ -240,18 +246,9 @@ public class Services {
     }
 
     private void updateBonus(ProductType product, PallierType pallier) {
-        switch (pallier.getTyperatio().value()) {
-            case "gain":
-                product.setRevenu(product.getRevenu() * pallier.getRatio());
-                break;
-            case "vitesse":
-                product.setVitesse(product.getVitesse() / (int) pallier.getRatio());
-                product.setTimeleft(product.getTimeleft() / (int) pallier.getRatio());
-                break;
-            case "ange":
-                // Mais que fais un ange ?
-                break;
-        }
+       if (pallier.getTyperatio() == TyperatioType.VITESSE) product.setVitesse((int) (product.getVitesse() / pallier.getRatio()));
+        else 
+            product.setRevenu(product.getRevenu() * pallier.getRatio());
     }
 
 

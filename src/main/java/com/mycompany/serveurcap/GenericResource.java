@@ -49,17 +49,20 @@ public class GenericResource {
     @GET
     @Path("world")
     @Produces(MediaType.APPLICATION_XML)
-    public World getWorld(@Context HttpServletRequest request) throws JAXBException {
+    public World getWorld(@Context HttpServletRequest request) throws JAXBException, FileNotFoundException {
         String username = request.getHeader("X-User");
-        return services.readWorldFromXml(username);
+        World world = services.readWorldFromXml(username);
+        services.saveWorldToXml(world, username);
+        return world;
     }
     
     @GET
     @Path("world")
     @Produces(MediaType.APPLICATION_JSON)
-    public String getWorldJSON(@Context HttpServletRequest request) throws JAXBException {
+    public String getWorldJSON(@Context HttpServletRequest request) throws JAXBException, FileNotFoundException {
         String username = request.getHeader("X-User");
         World world = services.readWorldFromXml(username); 
+        services.saveWorldToXml(world, username);
         return new Gson().toJson(world);
     }
 
@@ -76,7 +79,7 @@ public class GenericResource {
     @PUT
     @Path("product")
     @Consumes(MediaType.APPLICATION_XML)
-    public void putProduct(String data,@Context HttpServletRequest request) throws JAXBException, FileNotFoundException{
+    public void putProduct(String data,@Context HttpServletRequest request) throws JAXBException, FileNotFoundException, InterruptedException{
         ProductType product = new Gson().fromJson(data, ProductType.class);
         String username = request.getHeader("X-User");
         services.updateProduct(username, product);
