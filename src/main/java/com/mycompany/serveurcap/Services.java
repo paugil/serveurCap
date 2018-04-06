@@ -33,7 +33,7 @@ public class Services {
     private Unmarshaller u;
     
     public World readWorldFromXml(String username) throws JAXBException {
-        System.out.println("user" + username);
+        //System.out.println("user" + username);
         try {
             cont = JAXBContext.newInstance(World.class);
             u = cont.createUnmarshaller();
@@ -44,11 +44,11 @@ public class Services {
         
         try {
             world = (World) u.unmarshal(new File(username + "-world.xml"));
-            System.out.println("pas de fichier");
+            //System.out.println("pas de fichier");
         } catch (UnmarshalException e) {
             InputStream input = getClass().getClassLoader().getResourceAsStream("world.xml");
             world = (World) u.unmarshal(input);
-            System.out.println(username);
+            //System.out.println(username);
         }
         
         return world;

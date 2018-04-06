@@ -79,7 +79,7 @@ public class GenericResource {
     @PUT
     @Path("product")
     @Consumes(MediaType.APPLICATION_JSON)
-    public void putProduct(String data,@Context HttpServletRequest request) throws JAXBException, FileNotFoundException, InterruptedException{
+    public void putProduct(@Context HttpServletRequest request, String data) throws JAXBException, FileNotFoundException, InterruptedException{
         ProductType product = new Gson().fromJson(data, ProductType.class);
         String username = request.getHeader("X-User");
         services.updateProduct(username, product);
@@ -88,7 +88,7 @@ public class GenericResource {
     @PUT
     @Path("manager")
     @Consumes(MediaType.APPLICATION_JSON)
-    public void putManager(String data,@Context HttpServletRequest request) throws JAXBException, FileNotFoundException{
+    public void putManager(@Context HttpServletRequest request, String data) throws JAXBException, FileNotFoundException{
         PallierType manager = new Gson().fromJson(data, PallierType.class);
         String username = request.getHeader("X-User");
         services.updateManager(username, manager);
@@ -97,7 +97,7 @@ public class GenericResource {
     @PUT
     @Path("upgrade")
     @Consumes(MediaType.APPLICATION_JSON)
-    public void putUpgrade(String data,@Context HttpServletRequest request) throws JAXBException, FileNotFoundException{
+    public void putUpgrade(@Context HttpServletRequest request,String data) throws JAXBException, FileNotFoundException{
         PallierType pallier = new Gson().fromJson(data, PallierType.class);
         String username = request.getHeader("X-User");
         services.updateUpgrade(username, pallier);
@@ -106,7 +106,7 @@ public class GenericResource {
     @PUT
     @Path("angel")
     @Consumes(MediaType.APPLICATION_JSON)
-    public void putAngel(String data,@Context HttpServletRequest request) throws JAXBException, FileNotFoundException{
+    public void putAngel(@Context HttpServletRequest request, String data) throws JAXBException, FileNotFoundException{
         PallierType pallier = new Gson().fromJson(data, PallierType.class);
         String username = request.getHeader("X-User");
         services.updateAngel(username, pallier);
@@ -115,7 +115,7 @@ public class GenericResource {
     @PUT
     @Path("reset")
     @Consumes(MediaType.APPLICATION_JSON)
-    public void Reset(String data,@Context HttpServletRequest request) throws JAXBException, FileNotFoundException, Exception{
+    public void Reset(@Context HttpServletRequest request, String data) throws JAXBException, FileNotFoundException, Exception{
         String username = request.getHeader("X-User");
         World world = services.readWorldFromXml(username);
         services.resetWorld(username, world);
