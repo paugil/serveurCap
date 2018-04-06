@@ -2,7 +2,7 @@
 xsi:noNamespaceSchemaLocation="worldSchema.xsd">
 	<name>CapiFrance</name>
 	<logo>icones/CapiFrance.png</logo>
-	<money>20000000</money>
+	<money>1000</money>
 	<score>0</score>
 	<totalangels>0</totalangels>
 	<activeangels>0</activeangels>
