@@ -1,9 +1,6 @@
-com\mycompany\serveurcap\Services.class
 com\mycompany\serveurcap\ApplicationConfig.class
 com\mycompany\serveurcap\GenericResource.class
 generated\PallierType.class
-generated\World.class
-generated\ObjectFactory.class
 generated\ProductType.class
 generated\TyperatioType.class
 generated\PalliersType.class

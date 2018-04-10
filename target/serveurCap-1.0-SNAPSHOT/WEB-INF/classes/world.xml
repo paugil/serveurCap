@@ -2,7 +2,7 @@
 xsi:noNamespaceSchemaLocation="worldSchema.xsd">
 	<name>CapiFrance</name>
 	<logo>icones/CapiFrance.png</logo>
-	<money>1000</money>
+	<money>0</money>
 	<score>0</score>
 	<totalangels>0</totalangels>
 	<activeangels>0</activeangels>
@@ -24,7 +24,7 @@ xsi:noNamespaceSchemaLocation="worldSchema.xsd">
 				<pallier>
 					<name>Croissant</name>
 					<logo>icones/viennoiseries/croissant.jpg</logo>
-					<seuil>10</seuil>
+					<seuil>2</seuil>
 					<idcible>1</idcible>
 					<ratio>5</ratio>
 					<typeratio>vitesse</typeratio>
@@ -33,7 +33,7 @@ xsi:noNamespaceSchemaLocation="worldSchema.xsd">
 				<pallier>
 					<name>Pain au chocolat</name>
 					<logo>icones/viennoiseries/painchoc.jpg</logo>
-					<seuil>30</seuil>
+					<seuil>4</seuil>
 					<idcible>1</idcible>
 					<ratio>5</ratio>
 					<typeratio>gain</typeratio>
@@ -42,7 +42,7 @@ xsi:noNamespaceSchemaLocation="worldSchema.xsd">
 				<pallier>
 					<name>Chouquette</name>
 					<logo>icones/viennoiseries/chouquette.jpg</logo>
-					<seuil>100</seuil>
+					<seuil>8</seuil>
 					<idcible>1</idcible>
 					<ratio>10</ratio>
 					<typeratio>vitesse</typeratio>
@@ -51,7 +51,7 @@ xsi:noNamespaceSchemaLocation="worldSchema.xsd">
 				<pallier>
 					<name>Brioche</name>
 					<logo>icones/viennoiseries/brioche.jpg</logo>
-					<seuil>300</seuil>
+					<seuil>16</seuil>
 					<idcible>1</idcible>
 					<ratio>10</ratio>
 					<typeratio>gain</typeratio>
@@ -75,7 +75,7 @@ xsi:noNamespaceSchemaLocation="worldSchema.xsd">
 				<pallier>
 					<name>Pain de mie</name>
 					<logo>icones/pains/paindemie.jpg</logo>
-					<seuil>40</seuil>
+					<seuil>4</seuil>
 					<idcible>2</idcible>
 					<ratio>2</ratio>
 					<typeratio>vitesse</typeratio>
@@ -84,7 +84,7 @@ xsi:noNamespaceSchemaLocation="worldSchema.xsd">
 				<pallier>
 					<name>Baguette</name>
 					<logo>icones/pains/baguette.jpg</logo>
-					<seuil>70</seuil>
+					<seuil>8</seuil>
 					<idcible>2</idcible>
 					<ratio>3</ratio>
 					<typeratio>gain</typeratio>
@@ -93,7 +93,7 @@ xsi:noNamespaceSchemaLocation="worldSchema.xsd">
 				<pallier>
 					<name>Pain au sésame</name>
 					<logo>icones/pains/painsesame.jpg</logo>
-					<seuil>110</seuil>
+					<seuil>16</seuil>
 					<idcible>2</idcible>
 					<ratio>5</ratio>
 					<typeratio>vitesse</typeratio>
@@ -102,7 +102,7 @@ xsi:noNamespaceSchemaLocation="worldSchema.xsd">
 				<pallier>
 					<name>Pain bio</name>
 					<logo>icones/pains/painbio.jpg</logo>
-					<seuil>160</seuil>
+					<seuil>32</seuil>
 					<idcible>2</idcible>
 					<ratio>10</ratio>
 					<typeratio>gain</typeratio>
