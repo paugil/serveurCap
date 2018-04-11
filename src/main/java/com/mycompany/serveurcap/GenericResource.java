@@ -119,7 +119,7 @@ public class GenericResource {
     public void deleteWorld(@Context HttpServletRequest request) throws JAXBException, FileNotFoundException {
         String username = request.getHeader("X-User");
         World world = services.readWorldFromXml(username);
-        services.resetWorld(username, world);
+        services.resetWorld(username);
     }  
 
 }

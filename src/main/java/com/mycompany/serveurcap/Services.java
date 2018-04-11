@@ -119,10 +119,15 @@ public class Services {
         }
         int qtchange = newproduct.getQuantite() - product.getQuantite();
         if (qtchange > 0) {
-            world.setMoney(world.getMoney() - (product.getCout() * ((1 - Math.pow(product.getCroissance(), qtchange)) / (1 - product.getCroissance()))));
+            if (qtchange == 1){
+                world.setMoney(world.getMoney() - product.getCout());
+                product.setCout(product.getCout()*product.getCroissance());
+            }
+            else{
+                world.setMoney(world.getMoney() - (product.getCout() * ((1 - Math.pow(product.getCroissance(), qtchange)) / (1 - product.getCroissance())))); 
+                product.setCout(product.getCout() * Math.pow(product.getCroissance(), qtchange));
+            }
             product.setQuantite(newproduct.getQuantite());
-            //product.setCout(product.getCout() * product.getCroissance());
-            product.setCout(product.getCout() * Math.pow(product.getCroissance(), qtchange));
             List<PallierType> listUnlocksAllProducts = world.getAllunlocks().getPallier();
             List<ProductType> listProducts = world.getProducts().getProduct();
             List<PallierType> pallierProduct = product.getPalliers().getPallier();
@@ -130,8 +135,10 @@ public class Services {
                 if (unlock.isUnlocked() == false) {
                     int nbProduit = 0;
                     for (ProductType prod : listProducts) {
-                        if ((prod.getQuantite()) >= unlock.getSeuil()) {
+                        if ((prod.getQuantite()) >= unlock.getSeuil() && unlock.isUnlocked() == false) {
                             nbProduit = nbProduit + 1;
+                        }
+                        else { nbProduit = nbProduit;
                         }
                     }
                     if (nbProduit == 6) {
@@ -140,17 +147,18 @@ public class Services {
                             updateBonus(prod, unlock);
                         }
                     }
-                }
+                } else {//donothing   
+                        }
             }
             for (PallierType pallier : pallierProduct) {
-                if (product.getQuantite() >= pallier.getSeuil()) {
+                if (product.getQuantite() >= pallier.getSeuil() && pallier.isUnlocked()==false) {
                     pallier.setUnlocked(true);
                     updateBonus(product, pallier);
                 }
             }
         } else {
-            Thread.sleep(product.getVitesse() + 100);
-            world.setMoney(world.getMoney() + (product.getRevenu() * product.getQuantite()));
+            Thread.sleep(product.getVitesse()+100);
+            world.setMoney(world.getMoney() + product.getRevenu() * product.getQuantite());
         }
         calScore(world);
         saveWorldToXml(world, username);
@@ -175,10 +183,18 @@ public class Services {
         return true;
     }
 
-    void updateUpgrade(String username, PallierType newUpgrade) throws JAXBException, FileNotFoundException {
+    public Boolean updateUpgrade(String username, PallierType newUpgrade) throws JAXBException, FileNotFoundException {
         world = getWorld(username);
         PallierType upgrade = findUpgradeByName(world, newUpgrade.getName());
+        if (upgrade == null){
+            return false;
+        }
         upgrade.setUnlocked(true);
+        System.out.println("moneyav" + world.getMoney());
+        world.setMoney(world.getMoney() - upgrade.getSeuil());
+        System.out.println("prix" + upgrade.getSeuil());
+        System.out.println("moneyap" + world.getMoney());
+        world.setScore(world.getScore() - upgrade.getSeuil());
         List<ProductType> listProducts = world.getProducts().getProduct();
         for (ProductType product : listProducts) {
             if (upgrade.getIdcible() > 0 && (upgrade.getIdcible() == product.getId())) {
@@ -188,11 +204,12 @@ public class Services {
                 updateBonus(product, upgrade);
             }
             if (upgrade.getIdcible() == -1) {
-                updateBonus(null, upgrade);
+                //ANGE
+                //updateBonus(null, upgrade);
             }
         }
-        world.setMoney(world.getMoney() - upgrade.getSeuil());
         saveWorldToXml(world, username);
+        return true;
     }
 
     void updateAngel(String username, PallierType newAngel) throws JAXBException, FileNotFoundException {
@@ -213,7 +230,8 @@ public class Services {
         saveWorldToXml(world, username);
     }
 
-    public void resetWorld(String username, World world) throws JAXBException, FileNotFoundException {
+    public World resetWorld(String username) throws JAXBException, FileNotFoundException {
+        world = getWorld(username);
         double nbAngel = (Math.floor(150 * Math.sqrt(world.getScore() / Math.pow(10, 5)) - world.getTotalangels()));
         double score = world.getScore();
         cont = JAXBContext.newInstance(World.class);
@@ -224,6 +242,7 @@ public class Services {
         newWorld.setTotalangels(nbAngel);
         newWorld.setScore(score);
         saveWorldToXml(newWorld, username);
+        return newWorld;
     }
 
     private void calScore(World world) {
@@ -240,26 +259,26 @@ public class Services {
             } else {
                 long elapseTime = System.currentTimeMillis() - world.getLastupdate();
                 int qtProduite = (int) (elapseTime / product.getVitesse());
-                System.out.println(product.getVitesse());
+                System.out.println("vitesse prod " + product.getVitesse());
                 //double quantite = (double) ((System.currentTimeMillis() - world.getLastupdate() - product.getTimeleft()) / product.getVitesse());
                 //quantite = Math.floor(quantite);
-                double score = world.getScore() + product.getRevenu() * qtProduite;
-                product.setTimeleft(product.getTimeleft() - (System.currentTimeMillis() - world.getLastupdate()));
+                double score = world.getScore()+qtProduite*product.getRevenu()*product.getQuantite();
+                product.setTimeleft((System.currentTimeMillis() - world.getLastupdate())-qtProduite * product.getVitesse());
                 world.setScore(score);
+                
             }
         }
-        System.out.println(world.getScore());
     }
 
     private void updateBonus(ProductType product, PallierType pallier) {
-//        System.out.println(pallier.getTyperatio());
-//        if (pallier.getTyperatio().value() == "VITESSE") {
-//            product.setVitesse((int)(product.getVitesse() / pallier.getRatio()));
-//            System.out.println("vitesse" + product.getVitesse());
-//        }
-//        else {//(pallier.getTyperatio().equals(TyperatioType.GAIN)) {
-//            product.setRevenu(product.getRevenu() * pallier.getRatio());
-//        } 
+        if (pallier.getTyperatio() == TyperatioType.VITESSE) {
+            product.setVitesse((int) (product.getVitesse() / pallier.getRatio()));
+            System.out.println("new vitesse"+product.getVitesse());
+        } else {
+            product.setRevenu(product.getRevenu() * pallier.getRatio());
+            System.out.println("new revenu"+product.getRevenu());
+        }
     }
+    
 
 }

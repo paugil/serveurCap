@@ -26,7 +26,7 @@ xsi:noNamespaceSchemaLocation="worldSchema.xsd">
 					<logo>icones/viennoiseries/croissant.jpg</logo>
 					<seuil>2</seuil>
 					<idcible>1</idcible>
-					<ratio>5</ratio>
+					<ratio>5.0</ratio>
 					<typeratio>vitesse</typeratio>
 					<unlocked>false</unlocked>
 				</pallier>
@@ -35,7 +35,7 @@ xsi:noNamespaceSchemaLocation="worldSchema.xsd">
 					<logo>icones/viennoiseries/painchoc.jpg</logo>
 					<seuil>4</seuil>
 					<idcible>1</idcible>
-					<ratio>5</ratio>
+					<ratio>5.0</ratio>
 					<typeratio>gain</typeratio>
 					<unlocked>false</unlocked>
 				</pallier>
@@ -44,7 +44,7 @@ xsi:noNamespaceSchemaLocation="worldSchema.xsd">
 					<logo>icones/viennoiseries/chouquette.jpg</logo>
 					<seuil>8</seuil>
 					<idcible>1</idcible>
-					<ratio>10</ratio>
+					<ratio>5.0</ratio>
 					<typeratio>vitesse</typeratio>
 					<unlocked>false</unlocked>
 				</pallier>
@@ -53,7 +53,7 @@ xsi:noNamespaceSchemaLocation="worldSchema.xsd">
 					<logo>icones/viennoiseries/brioche.jpg</logo>
 					<seuil>16</seuil>
 					<idcible>1</idcible>
-					<ratio>10</ratio>
+					<ratio>5.0</ratio>
 					<typeratio>gain</typeratio>
 					<unlocked>false</unlocked>
 				</pallier>
@@ -104,7 +104,7 @@ xsi:noNamespaceSchemaLocation="worldSchema.xsd">
 					<logo>icones/pains/painbio.jpg</logo>
 					<seuil>32</seuil>
 					<idcible>2</idcible>
-					<ratio>10</ratio>
+					<ratio>5</ratio>
 					<typeratio>gain</typeratio>
 					<unlocked>false</unlocked>
 				</pallier>
@@ -155,7 +155,7 @@ xsi:noNamespaceSchemaLocation="worldSchema.xsd">
 					<logo>icones/saucissons/saucissonreblochon.jpg</logo>
 					<seuil>200</seuil>
 					<idcible>3</idcible>
-					<ratio>10</ratio>
+					<ratio>5</ratio>
 					<typeratio>gain</typeratio>
 					<unlocked>false</unlocked>
 				</pallier>
@@ -206,7 +206,7 @@ xsi:noNamespaceSchemaLocation="worldSchema.xsd">
 					<logo>icones/plats/fonduesavoyarde.jpg</logo>
 					<seuil>200</seuil>
 					<idcible>4</idcible>
-					<ratio>10</ratio>
+					<ratio>5</ratio>
 					<typeratio>gain</typeratio>
 					<unlocked>false</unlocked>
 				</pallier>
@@ -257,7 +257,7 @@ xsi:noNamespaceSchemaLocation="worldSchema.xsd">
 					<logo>icones/fromages/reblochon.jpg</logo>
 					<seuil>250</seuil>
 					<idcible>5</idcible>
-					<ratio>10</ratio>
+					<ratio>5</ratio>
 					<typeratio>gain</typeratio>
 					<unlocked>false</unlocked>
 				</pallier>
@@ -308,7 +308,7 @@ xsi:noNamespaceSchemaLocation="worldSchema.xsd">
 					<logo>icones/vins/crozeshermitage.png</logo>
 					<seuil>300</seuil>
 					<idcible>6</idcible>
-					<ratio>10</ratio>
+					<ratio>5</ratio>
 					<typeratio>gain</typeratio>
 					<unlocked>false</unlocked>
 				</pallier>
@@ -372,7 +372,7 @@ xsi:noNamespaceSchemaLocation="worldSchema.xsd">
 					<logo>icones/upgrades/petanque.jpg</logo>
 					<seuil>15000</seuil>
 					<idcible>1</idcible>
-					<ratio>50</ratio>
+					<ratio>5</ratio>
 					<typeratio>gain</typeratio>
 					<unlocked>false</unlocked>
 				</pallier>
@@ -380,8 +380,8 @@ xsi:noNamespaceSchemaLocation="worldSchema.xsd">
 					<name>Soiree a Gaillac</name>
 					<logo>icones/upgrades/soiree.jpg</logo>
 					<seuil>30000</seuil>
-					<idcible>1</idcible>
-					<ratio>50</ratio>
+					<idcible>2</idcible>
+					<ratio>5</ratio>
 					<typeratio>gain</typeratio>
 					<unlocked>false</unlocked>
 				</pallier>
@@ -389,8 +389,8 @@ xsi:noNamespaceSchemaLocation="worldSchema.xsd">
 					<name>Le french Cancan</name>
 					<logo>icones/upgrades/frenchcancan.jpg</logo>
 					<seuil>40000</seuil>
-					<idcible>0</idcible>
-					<ratio>50</ratio>
+					<idcible>3</idcible>
+					<ratio>5</ratio>
 					<typeratio>gain</typeratio>
 					<unlocked>false</unlocked>
 				</pallier>
@@ -398,8 +398,8 @@ xsi:noNamespaceSchemaLocation="worldSchema.xsd">
 					<name>"Allons au ski"</name>
 					<logo>icones/upgrades/ski.jpg</logo>
 					<seuil>50000</seuil>
-					<idcible>1</idcible>
-					<ratio>50</ratio>
+					<idcible>4</idcible>
+					<ratio>5</ratio>
 					<typeratio>gain</typeratio>
 					<unlocked>false</unlocked>
 				</pallier>
@@ -407,8 +407,8 @@ xsi:noNamespaceSchemaLocation="worldSchema.xsd">
 					<name>"Juste un verre"</name>
 					<logo>icones/upgrades/unverre.jpg</logo>
 					<seuil>70000</seuil>
-					<idcible>1</idcible>
-					<ratio>50</ratio>
+					<idcible>5</idcible>
+					<ratio>5</ratio>
 					<typeratio>gain</typeratio>
 					<unlocked>false</unlocked>
 				</pallier>
@@ -417,7 +417,7 @@ xsi:noNamespaceSchemaLocation="worldSchema.xsd">
 					<logo>icones/upgrades/bicyclette.jpg</logo>
 					<seuil>90000</seuil>
 					<idcible>0</idcible>
-					<ratio>50</ratio>
+					<ratio>5</ratio>
 					<typeratio>gain</typeratio>
 					<unlocked>false</unlocked>
 				</pallier>
@@ -425,8 +425,8 @@ xsi:noNamespaceSchemaLocation="worldSchema.xsd">
 					<name>Soiree de Gala</name>
 					<logo>icones/upgrades/soiree.jpg</logo>
 					<seuil>100000</seuil>
-					<idcible>1</idcible>
-					<ratio>50</ratio>
+					<idcible>0</idcible>
+					<ratio>5</ratio>
 					<typeratio>gain</typeratio>
 					<unlocked>false</unlocked>
 				</pallier>
@@ -434,8 +434,8 @@ xsi:noNamespaceSchemaLocation="worldSchema.xsd">
 					<name>Balance ton fromage</name>
 					<logo>icones/upgrades/balancetonfromage.jpg</logo>
 					<seuil>150000</seuil>
-					<idcible>1</idcible>
-					<ratio>50</ratio>
+					<idcible>0</idcible>
+					<ratio>5</ratio>
 					<typeratio>gain</typeratio>
 					<unlocked>false</unlocked>
 				</pallier>
@@ -444,7 +444,7 @@ xsi:noNamespaceSchemaLocation="worldSchema.xsd">
 					<logo>icones/upgrades/adopteunfrancais.jpg</logo>
 					<seuil>190000</seuil>
 					<idcible>0</idcible>
-					<ratio>50</ratio>
+					<ratio>5</ratio>
 					<typeratio>gain</typeratio>
 					<unlocked>false</unlocked>
 				</pallier>
@@ -452,8 +452,8 @@ xsi:noNamespaceSchemaLocation="worldSchema.xsd">
 					<name>Soiree fondue</name>
 					<logo>icones/upgrades/soireefondue.jpg</logo>
 					<seuil>250000</seuil>
-					<idcible>1</idcible>
-					<ratio>50</ratio>
+					<idcible>0</idcible>
+					<ratio>5</ratio>
 					<typeratio>gain</typeratio>
 					<unlocked>false</unlocked>
 				</pallier>
