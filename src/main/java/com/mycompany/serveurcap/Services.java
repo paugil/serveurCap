@@ -56,7 +56,6 @@ public class Services {
 
     public void saveWorldToXml(World world, String pseudo) throws JAXBException, FileNotFoundException {
         world.setLastupdate(System.currentTimeMillis());
-        calScore(world);
         Marshaller m = cont.createMarshaller();
         m.marshal(world, new File(pseudo + "-world.xml"));
     }
@@ -122,7 +121,8 @@ public class Services {
         if (qtchange > 0) {
             world.setMoney(world.getMoney() - (product.getCout() * ((1 - Math.pow(product.getCroissance(), qtchange)) / (1 - product.getCroissance()))));
             product.setQuantite(newproduct.getQuantite());
-            product.setCout(product.getCout() * product.getCroissance());
+            //product.setCout(product.getCout() * product.getCroissance());
+            product.setCout(product.getCout() * Math.pow(product.getCroissance(), qtchange));
             List<PallierType> listUnlocksAllProducts = world.getAllunlocks().getPallier();
             List<ProductType> listProducts = world.getProducts().getProduct();
             List<PallierType> pallierProduct = product.getPalliers().getPallier();
@@ -151,8 +151,8 @@ public class Services {
         } else {
             Thread.sleep(product.getVitesse() + 100);
             world.setMoney(world.getMoney() + (product.getRevenu() * product.getQuantite()));
-
         }
+        calScore(world);
         saveWorldToXml(world, username);
         return true;
     }
@@ -170,6 +170,7 @@ public class Services {
         }
         product.setManagerUnlocked(true);
         world.setMoney(world.getMoney() - manager.getSeuil());
+        world.setScore(world.getScore() - manager.getSeuil());
         saveWorldToXml(world, username);
         return true;
     }
@@ -226,36 +227,39 @@ public class Services {
     }
 
     private void calScore(World world) {
-        double score = world.getScore();
         ProductsType products = world.getProducts();
         List<ProductType> listProducts = products.getProduct();
         for (ProductType product : listProducts) {
             if (!product.isManagerUnlocked()) {
                 if (product.getTimeleft() >= 0 && product.getTimeleft() < (System.currentTimeMillis() - world.getLastupdate())) {
-                    score = world.getScore() + product.getRevenu() * product.getQuantite();
+                    double score = world.getScore() + (product.getRevenu() * product.getQuantite());
+                    world.setScore(score);
                 } else {
-                    product.setTimeleft(product.getTimeleft() - (System.currentTimeMillis() - world.getLastupdate()));
+                    product.setTimeleft(product.getTimeleft() - (System.currentTimeMillis() - world.getLastupdate())); 
                 }
             } else {
-                double quantite = (double) ((System.currentTimeMillis() - world.getLastupdate() - product.getTimeleft()) / product.getVitesse());
-                quantite = Math.floor(quantite);
-                score = world.getScore() + product.getRevenu() * quantite;
+                long elapseTime = System.currentTimeMillis() - world.getLastupdate();
+                int qtProduite = (int) (elapseTime / product.getVitesse());
+                System.out.println(product.getVitesse());
+                //double quantite = (double) ((System.currentTimeMillis() - world.getLastupdate() - product.getTimeleft()) / product.getVitesse());
+                //quantite = Math.floor(quantite);
+                double score = world.getScore() + product.getRevenu() * qtProduite;
                 product.setTimeleft(product.getTimeleft() - (System.currentTimeMillis() - world.getLastupdate()));
+                world.setScore(score);
             }
         }
-        world.setScore(score);
-        System.out.println(score);
+        System.out.println(world.getScore());
     }
 
     private void updateBonus(ProductType product, PallierType pallier) {
-        if (pallier.getTyperatio() == TyperatioType.VITESSE) {
-            product.setVitesse((int) (product.getVitesse() / pallier.getRatio()));
-        }
-        if (pallier.getTyperatio() == TyperatioType.GAIN) {
-            product.setRevenu(product.getRevenu() * pallier.getRatio());
-        } else {
-            //ANGE
-        }
+//        System.out.println(pallier.getTyperatio());
+//        if (pallier.getTyperatio().value() == "VITESSE") {
+//            product.setVitesse((int)(product.getVitesse() / pallier.getRatio()));
+//            System.out.println("vitesse" + product.getVitesse());
+//        }
+//        else {//(pallier.getTyperatio().equals(TyperatioType.GAIN)) {
+//            product.setRevenu(product.getRevenu() * pallier.getRatio());
+//        } 
     }
 
 }
