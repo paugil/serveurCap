@@ -41,7 +41,7 @@ xsi:noNamespaceSchemaLocation="worldSchema.xsd">
 				</pallier>
 				<pallier>
 					<name>Chouquette</name>
-					<logo>icones/viennoiseries/chouquette.jpg</logo>
+					<logo>icones/viennoiseries/chouquette.png</logo>
 					<seuil>8</seuil>
 					<idcible>1</idcible>
 					<ratio>5.0</ratio>
@@ -278,7 +278,7 @@ xsi:noNamespaceSchemaLocation="worldSchema.xsd">
 			<palliers>
 				<pallier>
 					<name>Le beaujolais nouveau</name>
-					<logo>icones/vins/beaujolais.jpg</logo>
+					<logo>icones/vins/beaujolais.png</logo>
 					<seuil>80</seuil>
 					<idcible>6</idcible>
 					<ratio>2</ratio>

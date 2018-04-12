@@ -33,7 +33,6 @@ public class Services {
     private Unmarshaller u;
 
     public World readWorldFromXml(String username) throws JAXBException {
-        //System.out.println("user" + username);
         try {
             cont = JAXBContext.newInstance(World.class);
             u = cont.createUnmarshaller();
@@ -44,11 +43,9 @@ public class Services {
 
         try {
             world = (World) u.unmarshal(new File(username + "-world.xml"));
-            //System.out.println("pas de fichier");
         } catch (UnmarshalException e) {
             InputStream input = getClass().getClassLoader().getResourceAsStream("world.xml");
             world = (World) u.unmarshal(input);
-            //System.out.println(username);
         }
 
         return world;
@@ -162,7 +159,6 @@ public class Services {
             Thread.sleep(product.getVitesse()+100);
             world.setMoney(world.getMoney() + product.getRevenu() * product.getQuantite());
             calScore(world);
-            System.out.println("money ; " + world.getMoney() + " score ; " + world.getScore());
         }
         
         saveWorldToXml(world, username);
@@ -194,10 +190,7 @@ public class Services {
             return false;
         }
         upgrade.setUnlocked(true);
-        System.out.println("moneyav" + world.getMoney());
         world.setMoney(world.getMoney() - upgrade.getSeuil());
-        System.out.println("prix" + upgrade.getSeuil());
-        System.out.println("moneyap" + world.getMoney());
         world.setScore(world.getScore() - upgrade.getSeuil());
         List<ProductType> listProducts = world.getProducts().getProduct();
         for (ProductType product : listProducts) {
@@ -263,9 +256,6 @@ public class Services {
             } else {
                 long elapseTime = System.currentTimeMillis() - world.getLastupdate();
                 int qtProduite = (int) (elapseTime / product.getVitesse());
-                System.out.println("vitesse prod " + product.getVitesse());
-                //double quantite = (double) ((System.currentTimeMillis() - world.getLastupdate() - product.getTimeleft()) / product.getVitesse());
-                //quantite = Math.floor(quantite);
                 double score = world.getScore()+qtProduite*product.getRevenu()*product.getQuantite();
                 product.setTimeleft((System.currentTimeMillis() - world.getLastupdate())-qtProduite * product.getVitesse());
                 world.setScore(score);
@@ -277,10 +267,8 @@ public class Services {
     private void updateBonus(ProductType product, PallierType pallier) {
         if (pallier.getTyperatio() == TyperatioType.VITESSE) {
             product.setVitesse((int) (product.getVitesse() / pallier.getRatio()));
-            System.out.println("new vitesse"+product.getVitesse());
         } else {
             product.setRevenu(product.getRevenu() * pallier.getRatio());
-            System.out.println("new revenu"+product.getRevenu());
         }
     }
     

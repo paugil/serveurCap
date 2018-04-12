@@ -116,10 +116,10 @@ public class GenericResource {
     @DELETE
     @Path("world")
     @Consumes(MediaType.APPLICATION_JSON)
-    public void deleteWorld(@Context HttpServletRequest request) throws JAXBException, FileNotFoundException {
+    public String deleteWorld(@Context HttpServletRequest request) throws JAXBException, FileNotFoundException {
         String username = request.getHeader("X-User");
-        World world = services.readWorldFromXml(username);
-        services.resetWorld(username);
+        World world = services.resetWorld(username);
+        return new Gson().toJson(world);
     }  
 
 }
