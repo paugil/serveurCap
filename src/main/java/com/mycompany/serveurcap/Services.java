@@ -121,11 +121,13 @@ public class Services {
         if (qtchange > 0) {
             if (qtchange == 1){
                 world.setMoney(world.getMoney() - product.getCout());
+                world.setScore(world.getScore() - product.getCout());
                 product.setCout(product.getCout()*product.getCroissance());
             }
             else{
                 world.setMoney(world.getMoney() - (product.getCout() * ((1 - Math.pow(product.getCroissance(), qtchange)) / (1 - product.getCroissance())))); 
-                product.setCout(product.getCout() * Math.pow(product.getCroissance(), qtchange));
+                world.setScore(world.getScore() - (product.getCout() * ((1 - Math.pow(product.getCroissance(), qtchange)) / (1 - product.getCroissance())))); 
+                product.setCout(product.getCout() * Math.pow(product.getCroissance(), qtchange));  
             }
             product.setQuantite(newproduct.getQuantite());
             List<PallierType> listUnlocksAllProducts = world.getAllunlocks().getPallier();
@@ -159,8 +161,10 @@ public class Services {
         } else {
             Thread.sleep(product.getVitesse()+100);
             world.setMoney(world.getMoney() + product.getRevenu() * product.getQuantite());
+            calScore(world);
+            System.out.println("money ; " + world.getMoney() + " score ; " + world.getScore());
         }
-        calScore(world);
+        
         saveWorldToXml(world, username);
         return true;
     }
